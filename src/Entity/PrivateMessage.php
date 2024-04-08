@@ -122,37 +122,14 @@ class PrivateMessage extends ContentEntityBase implements PrivateMessageInterfac
       ->setDisplayConfigurable('view', TRUE);
 
     // // Body of the private message.
-    // $fields['message'] = BaseFieldDefinition::create('text_long')
-    //   ->setLabel(t('Message'))
-    //   ->setRequired(TRUE)
-    //   ->setCardinality(1)
-    //   ->setTranslatable(FALSE)
-    //   ->setDisplayOptions('form', [
-    //     // 'type' => 'text_textarea',
-    //     'type' => 'text_textfield',
-    //     'label' => 'hidden',
-    //     'settings' => [
-    //       'placeholder' => 'Message',
-    //     ],
-    //   ])
-    //   ->setDisplayOptions('view', [
-    //     'label' => 'hidden',
-    //     'type' => 'text_textfield',
-    //     'settings' => [
-    //       'trim_length' => '200',
-    //     ],
-    //     'weight' => 0,
-    //   ])
-    //   ->setDisplayConfigurable('form', TRUE)
-    //   ->setDisplayConfigurable('view', TRUE);
-
-    $fields['message'] = BaseFieldDefinition::create('string')
+    $fields['message'] = BaseFieldDefinition::create('text_long')
       ->setLabel(t('Message'))
       ->setRequired(TRUE)
       ->setCardinality(1)
       ->setTranslatable(FALSE)
       ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
+        // 'type' => 'text_textarea',
+        'type' => 'text_textfield',
         'label' => 'hidden',
         'settings' => [
           'placeholder' => 'Message',
@@ -160,7 +137,7 @@ class PrivateMessage extends ContentEntityBase implements PrivateMessageInterfac
       ])
       ->setDisplayOptions('view', [
         'label' => 'hidden',
-        'type' => 'string',
+        'type' => 'text_textfield',
         'settings' => [
           'trim_length' => '200',
         ],
@@ -168,6 +145,8 @@ class PrivateMessage extends ContentEntityBase implements PrivateMessageInterfac
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
+
+
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
